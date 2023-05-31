@@ -11,11 +11,12 @@ html {
 }
 
 body {
-  margin: 20px 60px 0px 20px;
+  margin: 0px;
 }
 
 footer {
   position: fixed; 
   bottom: 0; 
-  margin: 10px 0px 20px 0px;
+  margin: 10px 0px 20px 10px;
 }
+

@@ -3,19 +3,53 @@
     <head>
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>@ViewData["Title"] - TPXX - Apellido</title>
+        <title>@ViewData["Title"] - TP05</title>
         <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
     </head>
     <body>
-        <header style="position:fixed; top: 0; margin: 10px 0px 20px 0px;">
-            Encabezado TP XX
+        <header>
+            <style>
+                ul {
+                    list-style-type: none;
+                    margin: 0;
+                    overflow: hidden;
+                    background-color: #333;
+                }
+
+                li {
+                    float: right;
+                }
+                .logo {
+                    float: left;
+                }
+                li a {
+                  display: block;
+                  color: white;
+                  text-align: center;
+                  padding: 14px 16px;
+                  text-decoration: none;
+                }
+
+                li a:hover:not(.active) {
+                  background-color: #111;
+                }
+                .active{
+                    background-color: green;
+                }
+            </style>
+            <ul>
+                <a href="#"><img src="~/Imagenes/LogoPLACEHOLDER.jpg" alt="Logo" width="" height="45"></a>
+                <li><a href="#news">News</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a class="active" href="#home">Home</a></li>
+            </ul>
         </header>
         <div style="padding:20px 10px 0px 10px;">
             @RenderBody()
         </div>
-
         <footer>
-                &copy; @DateTime.Now.Year - Taller de Programación - TPXX
+                &copy; @DateTime.Now.Year - Taller de Programación - TP05
         </footer>
         <script src="~/js/site.js" asp-append-version="true"></script>
         @await RenderSectionAsync("Scripts", required: false)
