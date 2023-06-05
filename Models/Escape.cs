@@ -8,7 +8,7 @@ public static class Escape
     {
         incognitasSalas[0] = "Mapa";
         incognitasSalas[1] = "3"; //aca el usuario va a elegir tipo formulario y dependiendo lo que diga resuelve (elige la primera puerta == '1', elige la segunda == '2' , elige la tercera == '3')
-        incognitasSalas[2] = ""; //blud is not working🗣🗣💯💯/DAMEDA👹👹👹
+        incognitasSalas[2] = ""; //blud is not working🗣🗣💯💯/DAMEDA👹👹👹 (este el de las inyecciones, capaz que solo encuentre un y=0? ej: de {-43;1,6666666} que ponga el -43)
         incognitasSalas[3] = "Resuelto"; //esta sala son de varias preguntas, ¿capaz un if respuestas correctas mayor a 60% = 1 else = 0? SI ESTA BIEN QUE DEVUELVA RESUELTO LISTO
         incognitasSalas[4] = ""; //aca no tenemos una respuesta todavia, pero es la de el texto invisible
     }
