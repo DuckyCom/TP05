@@ -24,3 +24,60 @@ footer {
   margin-left: 23%;
   height: 500px;
 }
+
+/* Navegador */
+@import url('https://fonts.googleapis.com/css2?family=Archivo+Black&display=swap');
+.header2{
+  background-color: #333232 ;
+  display: flex;
+  font-size: 20px;
+  justify-content: space-between;
+  align-items: center;
+  height: 85px;
+  padding: 5px 5%;
+}
+
+.header2 .logoempresa img{
+  width: auto;
+  margin-left: 60px;
+  height: 70px;
+}
+
+.header2 .nav3 .lista3 a{
+  font-family: "Nunito Sans","Segoe UI","Helvetica Neue",Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
+  list-style: none;
+}
+
+.header2 .lista3 li{
+  display: inline-block;
+  padding: 0 10px;
+}
+
+.header2 .texto-nav3{
+  margin-right: auto;
+  margin-left: 20px;
+  font-family: 'engravers-mt-regular', sans-serif;
+  font-size: 25px;
+  text-shadow: 2px 2px 4px rgb(114, 98, 98);
+  color: white; 
+} 
+
+.header2 .lista3 li:hover{
+  transform: scale(1.1);
+}
+
+.header2 .lista3 a{
+  text-decoration: none;
+  color: white;
+  border: none;
+  border-radius: 50px;
+  transition: all 0.3s ease 0s;
+  padding: 9px 25px;
+}
+
+.header2 .lista3 a:hover{
+  text-decoration:double;
+  background: white;
+  color: #000000;
+  transform: scale(1.1);
+}

@@ -7,44 +7,22 @@
         <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
     </head>
     <body>
-        <header>
-            <style>
-                ul {
-                    list-style-type: none;
-                    margin: 0%;
-                    width: 98%;
-                    height: 10%;
-                    overflow: hidden;
-                    background-color: #333;
-                }
-                li {
-                    float: right;
-                }
-                .logo {
-                    float: left;
-                }
-                li a {
-                  display: block;
-                  color: white;
-                  text-align: center;
-                  padding: 16px 18px;
-                  text-decoration: none;
-                }
-
-                li a:hover:not(.active) {
-                  background-color: #111;
-                }
-                .active{
-                    background-color: green;
-                }
-            </style>
-            <ul>
-                <a href='@Url.Action("Index","Home")'><img src="~/Imagenes/Logo.jpg" alt="Logo" width="" height="45"></a>
-                <li><a href='@Url.Action("Creditos","Home")'>Creditos</a></li>
-                <li><a href="#demostracion">Como jugar</a></li>
-                <li><a class="active" href='@Url.Action("Index","Home")'>Home</a></li>
+        <header class="header2">
+        <div class="logoempresa">
+            <img src="~/Imagenes/favicon.png" alt="Logo de la empresa">
+        </div>
+        <div class="texto-nav3">
+            <h2>LA MANSIÓN INFINITA</h2>
+        </div>
+        <nav class="nav3">
+            <ul class="lista3">
+                <li><a href='@Url.Action("Index","Home")'>Home</a></li>
+                <li><a href="#">Cómo Jugar</a></li>
+                <li><a href='@Url.Action("Creditos", "Home")'>Créditos</a></li>
+                <li><a href="#">No cliquees aquí 🥶</a></li>
             </ul>
-        </header>
+        </nav>
+    </header>
         <div style="padding:10px 0px 0px 15px;">
             @RenderBody()
         </div>
