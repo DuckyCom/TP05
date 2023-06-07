@@ -4,6 +4,23 @@ public static class Escape
     static string[] incognitasSalas;
     static int estadoJuego = 1;
     static int intentosFallidos = 0;
+
+    static string elNombre = "Manu";
+
+    static string Nombre;
+
+    public static string GetNombre()
+    {
+        return Nombre;
+    }
+    public static void CambiarNombre(string usuario)
+    {
+        Nombre = usuario;
+    }
+    public static void CambiarElNombre()
+    {
+        elNombre = Nombre;
+    }
     private static void InicializarJuego()
     {
         incognitasSalas[0] = "Mapa";

@@ -9,29 +9,37 @@ public class HomeController : Controller
         return View();
     }
 
-    public IActionResult creditos(){
-        return View("creditos");
+    public IActionResult Creditos(){
+        return View();
     }
     public IActionResult Tutorial()
     {
         return View();
     }
-    public IActionResult Comenzar()
+    public IActionResult Comenzar(string usuario)
     {
         //tiene que retornar la habitacion sin resolverse, ej: si el jugador se quedó en la 3 y le da a comenzar, que lo deje en la 3 🗣🗣🗣🗣
+        Escape.CambiarNombre(usuario);
         return View(Nivel());
     }
     public IActionResult Habitacion(int sala, string clave)
     {
+        ViewBag.Nombre = Escape.GetNombre();
         bool resuelto;
         if (sala != Escape.GetEstadoJuego()) return View(Nivel());
         resuelto = Escape.ResolverSala(sala, clave);
         if (resuelto) return View(Nivel());
         else return View("Muerte");
     }
+    public IActionResult EndingConquistador(string sala)
+    {
+        if (sala == "EndingConquistador") Escape.CambiarElNombre();
+        return View();
+    }
     //faltaria  un IActionResult de Habitacion pero no entendi bien como hacerlo xd
     static string Nivel()
     {
         return "Nivel" + Escape.GetEstadoJuego();
     }
+    
 }
