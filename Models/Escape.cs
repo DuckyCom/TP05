@@ -2,6 +2,7 @@ namespace TP05.Models;
 public static class Escape
 {
     static string[] incognitasSalas = new string[5];
+    static string[] nombresGenericos = new String[10];
     static int estadoJuego = 0;
     static int intentosFallidos = 0;
     static int intentosRestantes = 3;
@@ -11,6 +12,10 @@ public static class Escape
     public static string GetNombre()
     {
         return Nombre;
+    }
+    public static string GetElNombre()
+    {
+        return elNombre;
     }
     public static void RestarIntento()
     {
@@ -34,6 +39,16 @@ public static class Escape
     }
     public static void InicializarJuego()
     {
+        nombresGenericos[0] = "Jefferson";
+        nombresGenericos[1] = "David";
+        nombresGenericos[2] = "Rudolf";
+        nombresGenericos[3] = "Eric";
+        nombresGenericos[4] = "Raymond";
+        nombresGenericos[5] = "Olaf";
+        nombresGenericos[6] = "Muhammed";
+        nombresGenericos[7] = "Ezequiel"; //Teacher reference
+        nombresGenericos[8] = "rimpe";
+        nombresGenericos[9] = "William";
         incognitasSalas[0] = "Mapa";
         incognitasSalas[1] = "3"; //aca el usuario va a elegir tipo formulario y dependiendo lo que diga resuelve (elige la primera puerta == '1', elige la segunda == '2' , elige la tercera == '3')
         incognitasSalas[2] = "0; -2; 0,6"; //(este el de las inyecciones, capaz que solo encuentre un y=0? ej: de {-43;1,6666666} que ponga el -43)

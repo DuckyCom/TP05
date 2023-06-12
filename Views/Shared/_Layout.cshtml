@@ -1,13 +1,15 @@
 ﻿<!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>@ViewData["Title"] - TP05</title>
-        <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
-    </head>
-    <body>
-        <header class="header2">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - TP05</title>
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+</head>
+
+<body>
+    <header class="header2">
         <div class="logoempresa">
             <img src="~/Imagenes/favicon.png" alt="Logo de la empresa">
         </div>
@@ -19,18 +21,23 @@
                 <li><a href='@Url.Action("Index","Home")'>Home</a></li>
                 <li><a href="#">Cómo Jugar</a></li>
                 <li><a href='@Url.Action("Creditos", "Home")'>Créditos</a></li>
-                <li><a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ&pp=ygUIcmlja3JvbGw%3D">No cliquees aquí 🥶</a></li>
+                <li><a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ&pp=ygUIcmlja3JvbGw%3D">No cliquees aquí 🥶</a>
+                </li>
             </ul>
         </nav>
     </header>
-        <div style="padding:10px 0px 0px 15px;">
-            @RenderBody()
-        </div>
-        <footer>
-                <p>(Si una respuesta es periodica poner solo el primer numero)</p>
-                &copy; @DateTime.Now.Year - Taller de Programación - TP05
-        </footer>
-        <script src="~/js/site.js" asp-append-version="true"></script>
-        @await RenderSectionAsync("Scripts", required: false)
-    </body>
+    <div style="padding:10px 0px 0px 15px;">
+        @RenderBody()
+    </div>
+    <footer>
+        <p>(Si una respuesta es periodica poner solo el primer numero)</p>
+        <p>[Todas las imagenes son generadas con inteligencia artificial y no tenemos propiedad intelectual de las
+            mismas, todas son parte de Adobe Firefly*]</p>
+        &copy; @DateTime.Now.Year - Taller de Programación - TP05
+    </footer>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+        <div id="temporizador">00:00:00</div>
+</body>
+
 </html>
