@@ -24,6 +24,10 @@ footer {
   margin-left: 23%;
   height: 500px;
 }
+input {
+  clear: both;
+  margin-top: 10px;
+}
 
 /* Navegador */
 @import url('https://fonts.googleapis.com/css2?family=Archivo+Black&display=swap');

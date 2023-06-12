@@ -1,0 +1,23 @@
+@{
+    ViewData["Title"] = "Nivel 2: Las Puertas";
+}
+
+<p>
+Mientras más pisos subís por la mansión infinita, más hombres ves caer como sacrificio. Jugadores como vos que no pudieron resolver los acertijos. 
+Gracias al mapa lográs orientarte y encontras un pasillo que dice “Exit” con una flecha en el piso indicando a donde ir. Entras por ese pasillo y te topas con 3 puertas que conducen a distintos pasillos: 
+Estás frente a tres puertas. Cada puerta tiene una afirmación escrita. Uno de los carteles en las puertas dice: "La puerta a mi izquierda es la verdadera". El segundo cartel dice: "La puerta a mi derecha es falsa". El tercer cartel dice: "Solo uno de los carteles es verdadero".
+¿Cuál es la respuesta correcta?
+</p>
+
+<form action= '@Url.Action("Habitacion", "Home")'>
+    <div>
+        <input type="radio" name="opcion1" value="puerta1">Puerta 1<br> 
+    </div>
+    <div>
+       <input type="radio" name="opcion2" value="puerta2">Puerta 2<br> 
+    </div>
+    <div>
+        <input type="radio" name="clave" value="puerta3">Puerta 3<br> 
+    </div>
+    <input type="submit" value="submit"<
+</form>
