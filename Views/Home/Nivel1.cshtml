@@ -1,25 +1,21 @@
 @{
-    ViewData["Title"] = "Nivel 1: Tutorial";
+    ViewData["Title"] = "Nivel 2: Las Puertas";
 }
 
-<h2>Inspeccionas el cadáver y en un bolsillo encontrás una llave. 
-Vas subiendo las escaleras y usas la llave en la primera puerta que te encontrás.
-Estás en el piso 1. Al entrar al cuarto, ves una pequeña televisión con un contador de 5 minutos.
-Aparece también un acertijo en la tele, que dice: “Si a un lugar quieres llegar, a mi deben consultar.
-Yo los puedo ayudar a los sitios encontrar. Soy quien te ayuda a decir: “esto queda por aquí”. ¿Quién soy?". </h2>
+<p>
+Mientras más pisos subís por la mansión infinita, más hombres ves caer como sacrificio. Jugadores como vos que no pudieron resolver los acertijos. 
+Gracias al mapa lográs orientarte y encontras un pasillo que dice “Exit” con una flecha en el piso indicando a donde ir. Entras por ese pasillo y te topas con 3 puertas que conducen a distintos pasillos: 
+Estás frente a tres puertas. Cada puerta tiene una afirmación escrita. Uno de los carteles en las puertas dice: "La puerta a mi izquierda es la verdadera". El segundo cartel dice: "La puerta a mi derecha es falsa". El tercer cartel dice: "Solo uno de los carteles es verdadero".
+¿Cuál es la respuesta correcta?
+</p>
 
-<form action='@Url.Action("Habitacion","Home")'>
-    <input type="hidden" value="1" name="sala">
-        <div>
-            <p>Respuesta:</p> <input type="text" name="clave" placeholder="Ingresa Respuesta">
-        </div>
-        <div>
-            <input type="submit"> 
-        </div>
-        <p>
-            Pon la primer letra en MAYÚSCULAS y las demas en Minúsculas. ten cuidado jijijijijijijijijijijijijijijijijiji
-        </p>
+<form action='@Url.Action("Habitacion", "Home")'>
+    <input type="hidden" name="sala" value="1">
+    <select name="clave">
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+    </select>
+    <div><input type="submit"></div>
 </form>
-
-
-

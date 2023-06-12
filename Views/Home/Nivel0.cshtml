@@ -1,0 +1,25 @@
+@{
+    ViewData["Title"] = "Nivel 1: Tutorial";
+}
+
+<h2>Inspeccionas el cadáver y en un bolsillo encontrás una llave. 
+Vas subiendo las escaleras y usas la llave en la primera puerta que te encontrás.
+Estás en el piso 1. Al entrar al cuarto, ves una pequeña televisión con un contador de 5 minutos.
+Aparece también un acertijo en la tele, que dice: “Si a un lugar quieres llegar, a mi deben consultar.
+Yo los puedo ayudar a los sitios encontrar. Soy quien te ayuda a decir: “esto queda por aquí”. ¿Quién soy?". </h2>
+
+<form action='@Url.Action("Habitacion","Home")'>
+    <input type="hidden" value="0" name="sala">
+        <div>
+            <p>Respuesta:</p> <input type="text" name="clave" placeholder="Ingresa Respuesta">
+        </div>
+        <div>
+            <input type="submit"> 
+        </div>
+        <p>
+            Pon la primer letra en MAYÚSCULAS y las demas en Minúsculas. ten cuidado jijijijijijijijijijijijijijijijijiji
+        </p>
+</form>
+
+
+

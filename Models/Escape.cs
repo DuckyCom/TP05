@@ -2,7 +2,7 @@ namespace TP05.Models;
 public static class Escape
 {
     static string[] incognitasSalas = new string[5];
-    static int estadoJuego = 1;
+    static int estadoJuego = 0;
     static int intentosFallidos = 0;
     static int intentosRestantes = 3;
     static string elNombre = "Manu";
@@ -47,7 +47,7 @@ public static class Escape
     public static bool ResolverSala(int sala, string incognita)
     {
         bool retornar;
-        if (incognitasSalas[sala-1] == incognita)
+        if (incognitasSalas[sala] == incognita)
         {
             retornar = true;
             intentosRestantes = 3;
