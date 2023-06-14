@@ -62,9 +62,17 @@ public class HomeController : Controller
         if (sala == "EndingConquistador") Escape.CambiarElNombre();
         return View();
     }
+    public IActionResult Pepe()
+    {
+        return View();
+    }
     static string Nivel()
     {
         return "Nivel" + Escape.GetEstadoJuego();
     }
-    
+    public IActionResult PreguntasNivel3(int respuestasCorrectas){
+        
+        if (respuestasCorrectas > 5) return RedirectToAction("Habitacion", "Home", 3, "Resuelto");
+        else return RedirectToAction("Habitacion", "Home", 3, "Bobo");
+    }
 }

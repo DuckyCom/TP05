@@ -3,6 +3,38 @@
 }
 
 <p>
+Bienvenido a la Trivia! Ya sabés de qué trata: Si respondés bien vivís, y sino no. 
+</p>
+<p>
 "Este nivel está diseñado para que nos conozcamos mejor." -@ViewBag.KingNombre
 </p>
+<!--string[] preguntasTrivia = new string[8];
+        preguntasTrivia[0] = "¿Cómo se llama el papá del hijo de Goku?";  //respuesta: Goku.
+        preguntasTrivia[1] = "¿Quién es el villano en Spider-Man 2002?";  //respuesta: Duende Verde.
+        preguntasTrivia[2] = "¿Cómo te llamas?";  //respuesta: el nombre que eligió el jugador al principio del juego (en el comienzo).
+        preguntasTrivia[3] = "¿Con cuántas estrellas calificarías esta experiencia?(っ◔◡◔)っ ♥";   //Respuesta correcta: 4. Si elige 1, 2, 3 o 5 está mal.
+        preguntasTrivia[4] = "RESPUESTA: oro."; //en esta se le da la respuesta. El jugador tiene que elegir la pregunta correcta. Pregunta correcta: ¿Qué robaron los españoles?
+        preguntasTrivia[5] = "Tijeras"; //respuesta: Piedra (piedra papel o tijeras).
+        preguntasTrivia[6] = "¿?";  //esta dejarla en blanco a propósito. Si responde con "¡!" acierta.
+        preguntasTrivia[7] = "¿Ok?";  //respuesta:
+        for(int i = 0; i < 8; i++){
+            ViewBag.PreguntasTrivia = preguntasTrivia[i];
+        }-->
+
+        
+<form action='@Url.Action("PreguntasNivel3","Home")'>
+    <input type="hidden" value="3" name="sala">
+        <div>
+            <p>Respuesta:</p> <input type="text" name="clave" placeholder="Ingresa Respuesta">
+        </div>
+        <div>
+            <input type="submit"> 
+        </div>
+        <p>
+            0; -2; 0,6
+        </p>
+</form>
+
+
+
 

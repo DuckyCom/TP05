@@ -1,8 +1,10 @@
 namespace TP05.Models;
 public static class Escape
 {
-    static string[] incognitasSalas = new string[5];
+    static string[] incognitasSalas = new string[6];
     static string[] nombresGenericos = new String[10];
+
+    
     static int estadoJuego = 0;
     static int intentosFallidos = 0;
     static int intentosRestantes = 3;
@@ -54,7 +56,9 @@ public static class Escape
         incognitasSalas[2] = "0; -2; 0,6"; //(este el de las inyecciones, capaz que solo encuentre un y=0? ej: de {-43;1,6666666} que ponga el -43)
         incognitasSalas[3] = "Resuelto"; //esta sala son de varias preguntas, ¿capaz un if respuestas correctas mayor a 60% = 1 else = 0? SI ESTA BIEN QUE DEVUELVA RESUELTO LISTO
         incognitasSalas[4] = "0"; //aca no tenemos una respuesta todavia, pero es la de el texto invisible
+        incognitasSalas[5] = "0";
     }
+    
     public static int GetEstadoJuego()
     {
         return estadoJuego;

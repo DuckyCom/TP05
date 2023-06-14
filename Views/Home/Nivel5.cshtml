@@ -8,4 +8,16 @@ Te encontrás en un jardín. Ya no hay más indicaciones de @ViewBag.KingNombre 
 Al fondo, hay una cabaña de madera. Te acercás a la misma y escuchás a un hombre quejándose. La cerradura tiene un extraño rompecabezas. Decides: 
 </p>
 
+<form action='@Url.Action("Habitacion","Home")'>
+    <input type="hidden" value="5" name="sala">
+        <div>
+            <p>Respuesta:</p> <input type="text" name="clave" placeholder="Ingresa Respuesta">
+        </div>
+        <div>
+            <input type="submit"> 
+        </div>
+        <p>
+            0; -2; 0,6
+        </p>
+</form>
 <!--A PARTIR DE ACA PODES ELEGIR SIMPLEMENTE ESCAPARTE Y TERMINAR EL JUEGO (aparece un botón que dice escapar) O ENTRAR A LA CABAÑA PARA EL FINAL CANON -->
