@@ -21,8 +21,12 @@ Bienvenido a la Trivia! Ya sabés de qué trata: Si respondés bien vivís, y si
             ViewBag.PreguntasTrivia = preguntasTrivia[i];
         }-->
 
-        
+
 <form action='@Url.Action("PreguntasNivel3","Home")'>
+
+
+
+
     <input type="hidden" value="3" name="sala">
         <div>
             <p>Respuesta:</p> <input type="text" name="clave" placeholder="Ingresa Respuesta">
