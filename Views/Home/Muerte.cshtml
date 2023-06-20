@@ -1,9 +1,10 @@
-<p>Volver al nivel original</p>
 
+<img src="~/Imagenes/dead.gif" alt="MUERTO PETE" width="1920px" height="1080px">
 <audio controls autoplay>
-  <source src="~/audios/gritomuerte.ogg" type="audio/ogg">
-  <source src="~/audios/gritomuerte.mp3" type="audio/mpeg">
-  Your browser does not support the audio element.
+  <source src="~/audios/videoplayback.ogg" type="audio/ogg">
+  <source src="~/audios/videoplayback.mp4" type="audio/mpeg">
 </audio>
-
-<button onclick=location.href='@Url.Action("Empezar", "Home")'>Volver</button></div>
+<form action='@Url.Action("Muerte", "Home")'>
+<input type="text" name="usuario" required placeholder="Ingrese nuevo nombre">
+<input type="submit">
+</form>

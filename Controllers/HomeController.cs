@@ -8,6 +8,7 @@ public class HomeController : Controller
     {
         ViewBag.Nombre = Escape.GetNombre();
         ViewBag.KingNombre = Escape.GetElNombre();
+        Escape.ReiniciarJuego();
         return View();
     }
     public IActionResult Creditos(){
@@ -21,18 +22,19 @@ public class HomeController : Controller
         ViewBag.KingNombre = Escape.GetElNombre();
         return View();
     }
-    public IActionResult Comenzar(string usuario)
+    public IActionResult Comenzar()
     {
         ViewBag.Nombre = Escape.GetNombre();
         ViewBag.KingNombre = Escape.GetElNombre();
         //tiene que retornar la habitacion sin resolverse, ej: si el jugador se quedó en la 3 y le da a comenzar, que lo deje en la 3 🗣🗣🗣🗣
-        Escape.CambiarNombre(usuario);
-        return View();
+        if (Escape.DevolverIntentosFallidos() == 0) return View();
+        else return View(Nivel());
     }
-    public IActionResult Empezar(int sala)
+    public IActionResult Empezar(int sala, string usuario)
     {
         ViewBag.Nombre = Escape.GetNombre();
         ViewBag.KingNombre = Escape.GetElNombre();
+        Escape.CambiarNombre(usuario);
         Escape.InicializarJuego();
         return View(Nivel());
     }
@@ -43,13 +45,17 @@ public class HomeController : Controller
         bool resuelto;
         if (sala != Escape.GetEstadoJuego()) return View(Nivel());
         resuelto = Escape.ResolverSala(sala, clave);
-        if (resuelto) return View(Nivel());
+        if (resuelto)
+        {
+            Escape.ReiniciarIntentos();
+            return View(Nivel());
+        } 
         else 
         {
             Escape.RestarIntento();
             if (Escape.DevolverIntentos() == 0) 
             {
-                Escape.ReiniciarIntentos();
+                Escape.ReiniciarJuego();
                 return View("Muerte");
             }
             else return View(Nivel());
@@ -65,6 +71,19 @@ public class HomeController : Controller
     public IActionResult Pepe()
     {
         return View();
+    }
+    public IActionResult OpcionNivel5(string clave)
+    {
+        if (clave == "Rompecabezas")
+        {
+            return View(Nivel());
+        }
+        else return View("Escape");
+    }
+    public IActionResult Muerte(string usuario)
+    {
+        Escape.CambiarNombre(usuario);
+        return View("Index");
     }
     static string Nivel()
     {

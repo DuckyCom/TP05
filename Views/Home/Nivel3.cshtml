@@ -1,44 +1,67 @@
 @{
     ViewData["Title"] = "Nivel 4: El Salón de Trivia";
+    int contador = 0;
+    string clave = ""; 
+    string[] preguntasTrivia = new string[8];
+    preguntasTrivia[0] = "goku"; //respuesta: Goku.
+    preguntasTrivia[1] = "duende verde"; //respuesta: Duende Verde.
+    preguntasTrivia[2] = ViewBag.Nombre; //respuesta: el nombre que eligió el jugador al principio del juego (en el comienzo).
+    preguntasTrivia[3] = "5"; //Respuesta correcta: 4. Si elige 1, 2, 3 o 5 está mal.
+    preguntasTrivia[4] = "que robaron los españoles"; //en esta se le da la respuesta. El jugador tiene que elegir la pregunta correcta. Pregunta correcta: ¿Qué robaron los españoles?
+    preguntasTrivia[5] = "piedra"; //respuesta: Piedra (piedra papel o tijeras).
+    for(int i = 0; i < 5; i++){
+        ViewBag.PreguntasTrivia = preguntasTrivia[i];
+    }
 }
-
+<script>
+    function prueba(){
+    
+        var contenido = $("#clave1").val();
+         alert(contenido);
+        document.forms[0].submit();
+    }
+ 
+</script>
 <p>
 Bienvenido a la Trivia! Ya sabés de qué trata: Si respondés bien vivís, y sino no. 
 </p>
 <p>
 "Este nivel está diseñado para que nos conozcamos mejor." -@ViewBag.KingNombre
 </p>
-<!--string[] preguntasTrivia = new string[8];
-        preguntasTrivia[0] = "¿Cómo se llama el papá del hijo de Goku?";  //respuesta: Goku.
-        preguntasTrivia[1] = "¿Quién es el villano en Spider-Man 2002?";  //respuesta: Duende Verde.
-        preguntasTrivia[2] = "¿Cómo te llamas?";  //respuesta: el nombre que eligió el jugador al principio del juego (en el comienzo).
-        preguntasTrivia[3] = "¿Con cuántas estrellas calificarías esta experiencia?(っ◔◡◔)っ ♥";   //Respuesta correcta: 4. Si elige 1, 2, 3 o 5 está mal.
-        preguntasTrivia[4] = "RESPUESTA: oro."; //en esta se le da la respuesta. El jugador tiene que elegir la pregunta correcta. Pregunta correcta: ¿Qué robaron los españoles?
-        preguntasTrivia[5] = "Tijeras"; //respuesta: Piedra (piedra papel o tijeras).
-        preguntasTrivia[6] = "¿?";  //esta dejarla en blanco a propósito. Si responde con "¡!" acierta.
-        preguntasTrivia[7] = "¿Ok?";  //respuesta:
-        for(int i = 0; i < 8; i++){
-            ViewBag.PreguntasTrivia = preguntasTrivia[i];
-        }-->
 
-
-<form action='@Url.Action("PreguntasNivel3","Home")'>
-
-
-
-
-    <input type="hidden" value="3" name="sala">
+<form action='@Url.Action("Habitacion","Home")'>
+    <input type="hidden" value="3" name="sala" id="sala">
         <div>
-            <p>Respuesta:</p> <input type="text" name="clave" placeholder="Ingresa Respuesta">
+            <p>"¿Cómo se llama el papá del hijo de Goku?"</p>
+            <p>Respuesta:</p> <input type="text" name="clave1" id="clave1" required placeholder="Ingresa Respuesta">
+            <button onclick="alert('Pista: Es el mismo nombre')"> Pista </button>
         </div>
         <div>
-            <input type="submit"> 
+            <p>"¿Quién es el villano en Spider-Man 2002?"</p>
+            <p>Respuesta:</p> <input type="text" name="clave2" id="clave2" required placeholder="Ingresa Respuesta">
+            <button onclick="alert('Pista: Es VERDE')"> Pista </button>
         </div>
-        <p>
-            0; -2; 0,6
-        </p>
+        <div>
+            <p>"¿Cómo te llamas?"</p>
+            <p>Respuesta:</p> <input type="text" name="clave3" id="clave3" required placeholder="Ingresa Respuesta">
+            <button onclick="alert('Pista: Cual es tu nombre?')"> Pista </button>
+        </div>
+         <div>
+            <p>"¿Con cuántas estrellas calificarías esta experiencia?(っ◔◡◔)っ ♥"</p>
+            <p>Respuesta:</p> <input type="text" name="clave4" id="clave4" required placeholder="Ingresa Respuesta">
+            <button onclick="alert('Pista: El maximo es 5, no te recomiendo poner menos que eso.')"> Pista </button>
+        </div>
+        <div>
+            <p>"RESPUESTA: oro."</p>
+            <p>Respuesta:</p> <input type="text" name="clave5" id="clave5" required placeholder="Ingresa Respuesta">
+            <button onclick="alert('Pista: Es el mismo nombre')"> Pista </button>
+        </div>
+        <div>
+            <p>"Tijeras"</p>
+            <p>Respuesta:</p> <input type="text" name="clave6" id="clave6" required placeholder="Ingresa Respuesta">
+            <button onclick="alert('Pista: ¿Que le gana a las tijeras?')"> Pista </button>
+        </div>
+        <div>
+            <button onclick="prueba()" >PRUEBA</button>
+        </div>
 </form>
-
-
-
-

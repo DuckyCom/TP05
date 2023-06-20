@@ -1,8 +1,7 @@
 @{
     ViewData["Title"] = "Nivel 1: Tutorial";
 }
-<script></script>
-<h2>Inspeccionas el cadáver y en un bolsillo encontrás una llave. 
+<h2 class="explicacion1">Inspeccionas el cadáver y en un bolsillo encontrás una llave. 
 Vas subiendo las escaleras y usas la llave en la primera puerta que te encontrás.
 Estás en el piso 1. Al entrar al cuarto, ves una pequeña televisión con un contador de 5 minutos.
 Aparece también un acertijo en la tele, que dice: “Si a un lugar quieres llegar, a mi deben consultar.
@@ -10,15 +9,17 @@ Yo los puedo ayudar a los sitios encontrar. Soy quien te ayuda a decir: “esto 
 
 <form action='@Url.Action("Habitacion","Home")'>
     <input type="hidden" value="0" name="sala">
-        <div>
-            <p>Respuesta:</p> <input type="text" name="clave" placeholder="Ingresa Respuesta">
-        </div>
-        <div>
-            <input type="submit"> 
-        </div>
-        <p>
-            Pon la primer letra en MAYÚSCULAS y las demas en Minúsculas. ten cuidado jijijijijijijijijijijijijijijijijiji
-        </p>
+    <div>
+        <p>Respuesta:</p> <input class="ingreso" type="text" name="clave" placeholder="Ingresa Respuesta">
+        <button onclick="alert('Pista: Es el equivalente a un GPS pero de antaño...')"> Pista 1 </button>
+        <button onclick="alert('Pista: Empieza con m...')"> Pista 2 </button>
+    </div>
+    <div>
+        <input class="enviar" type="submit"> 
+    </div>
+    <p>
+        Pon la primer letra en MAYÚSCULAS y las demas en Minúsculas. ten cuidado jijijijijijijijijijijijijijijijijiji
+    </p>
 </form>
 
 

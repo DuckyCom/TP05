@@ -1,23 +1,109 @@
 @{
     ViewData["Title"] = "Nivel 6: La cabaña";
 }
-<!--POR CADA RESPUESTA CORRECTA SE ESCUCHA UN AUTOPLAY DE APLAUSOS CLAP CLAP CLAP. POR CADA MISTAKE UN BOOOOOOOOOO-->
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Rompecabezas</title>
+  <style>
+    #puzzle {
+      width: 300px;
+      height: 300px;
+      border: 1px solid black;
+      display: flex;
+      flex-wrap: wrap;
+    }
 
-<p>Lograste escaparte de la mansión. 
-Te encontrás en un jardín. Ya no hay más indicaciones de @ViewBag.KingNombre sobre qué es lo que tenés que hacer, porque ya no estás dentro de la mansión.
-Al fondo, hay una cabaña de madera. Te acercás a la misma y escuchás a un hombre quejándose. La cerradura tiene un extraño rompecabezas. Decides: 
-</p>
+    #puzzle div {
+      width: 100px;
+      height: 100px;
+      border: 1px solid black;
+      box-sizing: border-box;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <div id="puzzle"></div>
 
-<form action='@Url.Action("Habitacion","Home")'>
-    <input type="hidden" value="5" name="sala">
-        <div>
-            <p>Respuesta:</p> <input type="text" name="clave" placeholder="Ingresa Respuesta">
-        </div>
-        <div>
-            <input type="submit"> 
-        </div>
-        <p>
-            0; -2; 0,6
-        </p>
-</form>
+  <script>
+    // Imágenes de las piezas del rompecabezas
+    const images = [
+      "~/Imagenes/arbol.png",
+      "~/Imagenes/arbol.png",
+      "~/Imagenes/arbol.png",
+      "~/Imagenes/arbol.png",
+      "~/Imagenes/arbol.png",
+      "~/Imagenes/arbol.png",
+      "~/Imagenes/arbol.png",
+      "~/Imagenes/arbol.png",
+      "~/Imagenes/arbol.png"
+    ];
+
+    // Crea una matriz aleatoria a partir de un arreglo
+    function shuffleArray(array) {
+      const shuffled = array.slice();
+      for (let i = shuffled.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
+      }
+      return shuffled;
+    }
+
+    // Crea el rompecabezas en el DOM
+    function createPuzzle() {
+      const puzzle = document.getElementById("puzzle");
+      const shuffledImages = shuffleArray(images);
+
+      for (let i = 0; i < shuffledImages.length; i++) {
+        const piece = document.createElement("div");
+        const image = document.createElement("img");
+        image.src = shuffledImages[i];
+        piece.appendChild(image);
+        puzzle.appendChild(piece);
+
+        // Agrega un controlador de eventos al hacer clic en una pieza
+        piece.addEventListener("click", function() {
+          swapPieces(piece);
+          checkSolution();
+        });
+      }
+    }
+
+    // Intercambia la posición de dos piezas
+    function swapPieces(piece) {
+      const emptyPiece = document.querySelector("#puzzle div.empty");
+      const emptyPieceImage = emptyPiece.querySelector("img");
+      const pieceImage = piece.querySelector("img");
+
+      emptyPieceImage.src = pieceImage.src;
+      pieceImage.src = "";
+
+      emptyPiece.classList.remove("empty");
+      piece.classList.add("empty");
+    }
+
+    // Verifica si se ha completado el rompecabezas
+    function checkSolution() {
+      const pieces = document.querySelectorAll("#puzzle div");
+      const solved = Array.from(pieces).every((piece, index) => {
+        const pieceImage = piece.querySelector("img");
+        return pieceImage.src.includes(`imagen${index + 1}`);
+      });
+
+      if (solved) {
+        alert("¡Felicidades! ¡Has resuelto el rompecabezas!");
+      }
+    }
+
+    // Inicializa el rompecabezas cuando se carga la página
+    window.addEventListener("load", createPuzzle);
+  </script>
+</body>
+</html>
+
+
 <!--A PARTIR DE ACA PODES ELEGIR SIMPLEMENTE ESCAPARTE Y TERMINAR EL JUEGO (aparece un botón que dice escapar) O ENTRAR A LA CABAÑA PARA EL FINAL CANON -->

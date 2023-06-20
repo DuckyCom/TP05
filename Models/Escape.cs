@@ -27,6 +27,10 @@ public static class Escape
     {
         return intentosRestantes;
     }
+    public static int DevolverIntentosFallidos()
+    {
+        return intentosFallidos;
+    }
     public static void ReiniciarIntentos()
     {
         intentosRestantes = 3;
@@ -58,7 +62,11 @@ public static class Escape
         incognitasSalas[4] = "0"; //aca no tenemos una respuesta todavia, pero es la de el texto invisible
         incognitasSalas[5] = "0";
     }
-    
+    public static void ReiniciarJuego()
+    {
+        estadoJuego = 0;
+        intentosRestantes = 3;
+    }
     public static int GetEstadoJuego()
     {
         return estadoJuego;
