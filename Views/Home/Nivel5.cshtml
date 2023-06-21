@@ -1,109 +1,24 @@
 @{
     ViewData["Title"] = "Nivel 6: La cabaña";
 }
-<!DOCTYPE html>
-<html>
-<head>
-  <title>Rompecabezas</title>
-  <style>
-    #puzzle {
-      width: 300px;
-      height: 300px;
-      border: 1px solid black;
-      display: flex;
-      flex-wrap: wrap;
-    }
-
-    #puzzle div {
-      width: 100px;
-      height: 100px;
-      border: 1px solid black;
-      box-sizing: border-box;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      cursor: pointer;
-    }
-  </style>
-</head>
-<body>
-  <div id="puzzle"></div>
-
-  <script>
-    // Imágenes de las piezas del rompecabezas
-    const images = [
-      "~/Imagenes/arbol.png",
-      "~/Imagenes/arbol.png",
-      "~/Imagenes/arbol.png",
-      "~/Imagenes/arbol.png",
-      "~/Imagenes/arbol.png",
-      "~/Imagenes/arbol.png",
-      "~/Imagenes/arbol.png",
-      "~/Imagenes/arbol.png",
-      "~/Imagenes/arbol.png"
-    ];
-
-    // Crea una matriz aleatoria a partir de un arreglo
-    function shuffleArray(array) {
-      const shuffled = array.slice();
-      for (let i = shuffled.length - 1; i > 0; i--) {
-        const j = Math.floor(Math.random() * (i + 1));
-        [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
-      }
-      return shuffled;
-    }
-
-    // Crea el rompecabezas en el DOM
-    function createPuzzle() {
-      const puzzle = document.getElementById("puzzle");
-      const shuffledImages = shuffleArray(images);
-
-      for (let i = 0; i < shuffledImages.length; i++) {
-        const piece = document.createElement("div");
-        const image = document.createElement("img");
-        image.src = shuffledImages[i];
-        piece.appendChild(image);
-        puzzle.appendChild(piece);
-
-        // Agrega un controlador de eventos al hacer clic en una pieza
-        piece.addEventListener("click", function() {
-          swapPieces(piece);
-          checkSolution();
-        });
-      }
-    }
-
-    // Intercambia la posición de dos piezas
-    function swapPieces(piece) {
-      const emptyPiece = document.querySelector("#puzzle div.empty");
-      const emptyPieceImage = emptyPiece.querySelector("img");
-      const pieceImage = piece.querySelector("img");
-
-      emptyPieceImage.src = pieceImage.src;
-      pieceImage.src = "";
-
-      emptyPiece.classList.remove("empty");
-      piece.classList.add("empty");
-    }
-
-    // Verifica si se ha completado el rompecabezas
-    function checkSolution() {
-      const pieces = document.querySelectorAll("#puzzle div");
-      const solved = Array.from(pieces).every((piece, index) => {
-        const pieceImage = piece.querySelector("img");
-        return pieceImage.src.includes(`imagen${index + 1}`);
-      });
-
-      if (solved) {
-        alert("¡Felicidades! ¡Has resuelto el rompecabezas!");
-      }
-    }
-
-    // Inicializa el rompecabezas cuando se carga la página
-    window.addEventListener("load", createPuzzle);
-  </script>
-</body>
-</html>
 
 
 <!--A PARTIR DE ACA PODES ELEGIR SIMPLEMENTE ESCAPARTE Y TERMINAR EL JUEGO (aparece un botón que dice escapar) O ENTRAR A LA CABAÑA PARA EL FINAL CANON -->
+
+<p class="explicacion1">Decidiste continuar con tu aventura. Te acercás a la cabaña que viste a lo lejos. Escuchás gritos de desesperación dentro. Para entrar, hay un candado con una contraseña. 
+Para tu suerte, al lado del candado hay un cartel que indica que la contraseña es el nombre de un famoso hechizo para abrir cerraduras de una famosa saga de magos, pero en césar. 
+Al parecer, @ViewBag.KingNombre es algo olvidadizo con esas cosas...</p>
+
+<form action='@Url.Action("Habitacion","Home")'>
+<input type="hidden" value="5" name="sala" id='sala'>
+        <div>
+            <p>Respuesta:</p> <input class="ingreso" type="text" name="clave" placeholder="Ingresa Respuesta">  
+            <button onclick="alert('Pista: En césar, empieza con n y termina con b.')"> Pista </button>
+            <button onclick="alert('Pista: sin césar, empieza con a y termina con b.')"> Pista </button>
+        </div>
+        <div>
+            <input class="enviar" type="submit"> 
+        </div>
+</form>
+
+<!--FALTA QUE SI COMPLETA BIEN ESTO SE CONVIERTE EN EL NUEVO EVIL MANU-->

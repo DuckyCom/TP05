@@ -29,9 +29,6 @@
     <div style="padding:10px 0px 0px 15px;">
         @RenderBody()
     </div>
-    <footer>
-        &copy; @DateTime.Now.Year - Taller de Programación - TP05
-    </footer>
     <script src="~/js/site.js" asp-append-version="true"></script>
     @await RenderSectionAsync("Scripts", required: false)
         <div id="temporizador">00:00:00</div>

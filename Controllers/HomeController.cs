@@ -14,6 +14,7 @@ public class HomeController : Controller
     public IActionResult Creditos(){
         ViewBag.Nombre = Escape.GetNombre();
         ViewBag.KingNombre = Escape.GetElNombre();
+        ViewBag.Lore = Escape.Ganaste();
         return View();
     }
     public IActionResult Tutorial()
@@ -38,6 +39,17 @@ public class HomeController : Controller
         Escape.InicializarJuego();
         return View(Nivel());
     }
+    public IActionResult Pepe2(string decision)
+    {
+        if (decision == "1")
+        {
+            return View("Papel");
+        }
+        else
+        {
+            return View("Acertijo");
+        }
+    }
     public IActionResult Habitacion(int sala, string clave)
     {
         ViewBag.Nombre = Escape.GetNombre();
@@ -45,11 +57,18 @@ public class HomeController : Controller
         bool resuelto;
         if (sala != Escape.GetEstadoJuego()) return View(Nivel());
         resuelto = Escape.ResolverSala(sala, clave);
-        if (resuelto)
+        if (resuelto && Escape.GetEstadoJuego() == 6)
+        {
+            Escape.Ganar();
+            Escape.ReiniciarJuego();
+            Escape.ReiniciarIntentos();
+            return View("Creditos");
+        }
+        else if (resuelto)
         {
             Escape.ReiniciarIntentos();
             return View(Nivel());
-        } 
+        }
         else 
         {
             Escape.RestarIntento();

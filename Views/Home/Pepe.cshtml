@@ -2,21 +2,20 @@
     ViewData["Title"] = "Nivel 5: Jijiji";
 }
 <p>Te encontrás en el sótano. Según el mapa tenés que dirigirte a x lugar.
-Te encontrás con un monstruo acuático encerrado que al principio te hace tremendo jumpscare (imagen + audio) pero te das cuenta de que es inofensivo.
+Te encontrás con un monstruo acuático encerrado  pero te das cuenta de que es inofensivo.
 Tenés la opción de usar una llave que anteriormente encontraste para liberarlo o dejarlo ahí para que se pudra.
 Si lo liberas, el monstruo se intenta comunicar con vos y le das una hoja y lapicera que robaste del nivel anterior.
 Te dice que es Pepe (o nombre que el usuario elija). (Como se habían separado en el nivel 3 no se vieron hasta recién. 
 Vos pudiste pasar pero Pepe no, así que le cayeron ácidos y cosas así que lo desfiguraron). </p>
 
-<form action='@Url.Action("Habitacion","Home")'>
-    <input type="hidden" value="4" name="sala">
-        <div>
-            <p>Respuesta:</p> <input type="text" name="clave" placeholder="Ingresa Respuesta">
-        </div>
-        <div>
-            <input type="submit"> 
-        </div>
-        <p>
-            0; -2; 0,6
-        </p>
+<form action='@Url.Action("Pepe2","Home")'>
+    <div>
+        <select class="opciones" name="clave">
+        <option value="1">Salvarlo</option>
+        <option value="0">No salvarlo</option>
+        </select>
+    </div>
+    <div>
+        <input class="enviar" type="submit">
+    </div>
 </form>
