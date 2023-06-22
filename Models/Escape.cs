@@ -65,7 +65,7 @@ public static class Escape
         nombresGenericos[9] = "William";
         incognitasSalas[0] = "Mapa";
         incognitasSalas[1] = "3"; //aca el usuario va a elegir tipo formulario y dependiendo lo que diga resuelve (elige la primera puerta == '1', elige la segunda == '2' , elige la tercera == '3')
-        incognitasSalas[2] = "0; -2; 0,6"; //(este el de las inyecciones, capaz que solo encuentre un y=0? ej: de {-43;1,6666666} que ponga el -43)
+        incognitasSalas[2] = "0-20,6"; //(este el de las inyecciones, capaz que solo encuentre un y=0? ej: de {-43;1,6666666} que ponga el -43)
         incognitasSalas[3] = "Resuelto"; //esta sala son de varias preguntas, ¿capaz un if respuestas correctas mayor a 60% = 1 else = 0? SI ESTA BIEN QUE DEVUELVA RESUELTO LISTO
         incognitasSalas[4] = "Obama"; //aca no tenemos una respuesta todavia, pero es la del texto invisible
         incognitasSalas[5] = "bmpipnpsb"; //es alohomora de harry porter pero en cesar. 
@@ -82,7 +82,8 @@ public static class Escape
     public static bool ResolverSala(int sala, string incognita)
     {
         bool retornar;
-        if (incognitasSalas[sala] == incognita)
+        if (incognita == null) incognita="";
+        if (incognitasSalas[sala].ToUpper() == incognita.ToUpper())
         {
             retornar = true;
             intentosRestantes = 3;

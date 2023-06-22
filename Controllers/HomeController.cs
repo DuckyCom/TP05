@@ -108,9 +108,4 @@ public class HomeController : Controller
     {
         return "Nivel" + Escape.GetEstadoJuego();
     }
-    public IActionResult PreguntasNivel3(int respuestasCorrectas){
-        
-        if (respuestasCorrectas > 5) return RedirectToAction("Habitacion", "Home", 3, "Resuelto");
-        else return RedirectToAction("Habitacion", "Home", 3, "Bobo");
-    }
 }

@@ -12,12 +12,24 @@
 <p class="explicacion1">
     Tienes que poner las raices de la siguiente forma: x; x; x
 </p>
+<script>
+    function Grado3() {
+        var clave1 = document.getElementById("clave1").value;
+        var clave2 = document.getElementById("clave2").value;
+        var clave3 = document.getElementById("clave3").value;
+        document.getElementById("clave").value=(clave1.toString() + clave2.toString() + clave3.toString());
+        document.forms[0].submit();
+    }
+</script>
 <form action='@Url.Action("Habitacion","Home")'>
     <input type="hidden" value="2" name="sala">
+    <input type="hidden" id="clave" name="clave">
     <div>
-        <p>Respuesta:</p> <input class="ingreso" type="text" name="clave" placeholder="Ingresa Respuesta">  
+        <p>Respuesta:</p> <input class="ingreso" type="text" id = "clave1" placeholder="Ingresa Respuesta">  
+        <p>Respuesta:</p> <input class="ingreso" type="text" id = "clave2" placeholder="Ingresa Respuesta">  
+        <p>Respuesta:</p> <input class="ingreso" type="text" id = "clave3" placeholder="Ingresa Respuesta">  
     </div>
     <div>
-        <input class="enviar" type="submit"> 
+        <button class="boton-nivel3" onclick="Grado3()">ENVIAR</button>
     </div>
 </form>

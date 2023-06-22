@@ -1,37 +1,35 @@
-﻿window.onload = function() {
-  var sala = document.getElementById('sala')
-  var temporizador = document.getElementById('temporizador');
+﻿// window.onload = function() {
+//   var sala = document.getElementById('sala')
+//   var temporizador = document.getElementById('temporizador');
 
-  if (sala == 1) 
-  {
-  var minutos = 30;
-  var segundos = 0;
-  }
-  
+//   if (sala == 1) 
+//   {
+//   var minutos = 10;
+//   var segundos = 0;
+//   }
+//   setInterval(actualizarTemporizador, 1000);
 
-  setInterval(actualizarTemporizador, 1000);
+//   function actualizarTemporizador() {
+//     if (segundos > 0) {
+//       segundos--;
+//     } else {
+//       if (minutos > 0) {
+//         minutos--;
+//         segundos = 59;
+//       } else {
+//         // El temporizador ha llegado a 0, puedes agregar aquí alguna lógica adicional
+//         // o redirigir a otra página si es necesario.
+//       }
+//     }
 
-  function actualizarTemporizador() {
-    if (segundos > 0) {
-      segundos--;
-    } else {
-      if (minutos > 0) {
-        minutos--;
-        segundos = 59;
-      } else {
-        // El temporizador ha llegado a 0, puedes agregar aquí alguna lógica adicional
-        // o redirigir a otra página si es necesario.
-      }
-    }
+//     temporizador.textContent = pad(minutos) + ':' + pad(segundos);
+//   }
 
-    temporizador.textContent = pad(minutos) + ':' + pad(segundos);
-  }
-
-  function pad(valor) {
-    return valor < 10 ? '0' + valor : valor;
-  }
-};
-function prueba(){
+//   function pad(valor) {
+//     return valor < 10 ? '0' + valor : valor;
+//   }
+// };
+function Trivia(){
   var preguntasTrivia = [];
   preguntasTrivia[0] = "goku"; //respuesta: Goku.
   preguntasTrivia[1] = "duende verde"; //respuesta: Duende Verde.
